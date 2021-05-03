@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>572745484365-7lerdgkc9l0abov4l4m2ju24qurrpvts.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.572745484365-7lerdgkc9l0abov4l4m2ju24qurrpvts</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDR65oncRzpLVElaQPyEYmVaq_DRstIwXU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>572745484365</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.CoinAlert</string>
+	<key>PROJECT_ID</key>
+	<string>coinalert-9758f</string>
+	<key>STORAGE_BUCKET</key>
+	<string>coinalert-9758f.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:572745484365:ios:a0d1dfa67773989415f404</string>
+</dict>
+</plist>
