@@ -69,7 +69,6 @@ class CoinTableViewController: UITableViewController, UISearchBarDelegate {
         
         //monitor network status
         setupNetworkMonitor()
-        if !CoinTableViewController.isConnectedToInternet {CoinTableViewController.alertNoInternet(self)}
         
         //retrieve user-saved coin IDs
         let defaults = UserDefaults.standard
@@ -125,6 +124,8 @@ class CoinTableViewController: UITableViewController, UISearchBarDelegate {
             //must reload tableView data after fetching update price info
             self.tableView.reloadData()
         })
+        //alert if no internet
+        if !CoinTableViewController.isConnectedToInternet {CoinTableViewController.alertNoInternet(self)}
     }
     
     override func viewDidAppear(_ animated: Bool) {
