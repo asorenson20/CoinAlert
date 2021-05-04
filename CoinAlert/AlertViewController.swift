@@ -143,12 +143,16 @@ class AlertViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBAction func saveButton(_ sender: UIBarButtonItem) {
         
-        //store button press
-        lastButtonPressed = "saveButton"
-        //update Databse
-        updateDatabasePreference(AlertViewController.initialFrequency)
-        //return to coin table view controller
-        navigationController?.popViewController(animated: true)
+        if CoinTableViewController.isConnectedToInternet {
+            //store button press
+            lastButtonPressed = "saveButton"
+            //update Databse
+            updateDatabasePreference(AlertViewController.initialFrequency)
+            //return to coin table view controller
+            navigationController?.popViewController(animated: true)
+        } else {
+            CoinTableViewController.alertNoInternet(self)
+        }
     }
     
     @IBAction func cancelButton(_ sender: UIBarButtonItem) {

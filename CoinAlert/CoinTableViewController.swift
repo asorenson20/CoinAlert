@@ -9,6 +9,7 @@ import UIKit
 import Firebase
 import UserNotifications
 import os.log
+import Network
 
 class CoinTableViewController: UITableViewController, UISearchBarDelegate {
     
@@ -33,6 +34,9 @@ class CoinTableViewController: UITableViewController, UISearchBarDelegate {
     
     //keeps track of current user token
     static var userToken: String = ""
+    
+    //whether user has internet or not
+    static var isConnectedToInternet: Bool = false
     
     @IBOutlet weak var coinSelectButton: UIBarButtonItem!
     @IBOutlet weak var alertButton: UIBarButtonItem!
@@ -62,6 +66,10 @@ class CoinTableViewController: UITableViewController, UISearchBarDelegate {
         self.searchBar.delegate = self
         
         setupViewColors()
+        
+        //monitor network status
+        setupNetworkMonitor()
+        if !CoinTableViewController.isConnectedToInternet {CoinTableViewController.alertNoInternet(self)}
         
         //retrieve user-saved coin IDs
         let defaults = UserDefaults.standard
@@ -324,7 +332,12 @@ class CoinTableViewController: UITableViewController, UISearchBarDelegate {
             
             //save new coins to database
             let alertFrequency = defaults.object(forKey:"alertFrequency") as? String ?? "1Day"
-            saveDatabaseCoins(alertFrequency)
+            
+            if CoinTableViewController.isConnectedToInternet {
+                saveDatabaseCoins(alertFrequency)
+            } else {
+                CoinTableViewController.alertNoInternet(self)
+            }
             
             self.tableView.reloadData()
         }
@@ -335,6 +348,22 @@ class CoinTableViewController: UITableViewController, UISearchBarDelegate {
     //MARK: - Private Methods
     
     
+    
+    private func setupNetworkMonitor() {
+        
+        let networkMonitor = NWPathMonitor()
+        
+        networkMonitor.pathUpdateHandler = { path in
+            if path.status == .satisfied {
+                CoinTableViewController.isConnectedToInternet = true
+            } else {
+                CoinTableViewController.isConnectedToInternet = false
+            }
+        }
+        
+        let queue = DispatchQueue(label: "Monitor")
+        networkMonitor.start(queue: queue)
+    }
     
     private func askToEnableNotifications() {
         
@@ -446,6 +475,14 @@ class CoinTableViewController: UITableViewController, UISearchBarDelegate {
         cell.symbolLabel.text = coinSymbol
     }
     
+    static func alertNoInternet(_ self: UIViewController) {
+        print(CoinTableViewController.isConnectedToInternet)
+        //alert the user there is no internet to save their action
+        let alertController = UIAlertController(title: "Connection Error", message:
+                "Please check your internet then try again", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+        self.present(alertController, animated: true, completion: nil)
+    }
     
     
     // MARK: - Retired Methods
