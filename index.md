@@ -1,4 +1,4 @@
-### Destination for Cryptocurrency Price Notifications and Alerts
+# Destination for Cryptocurrency Price Notifications and Alerts
 
 CoinAlert Beta is the first iteration of an app that will deliver price notifications and alerts for different cryptocurrencies. The current version has been submitted for approval to be distributed to external testers via Test Flight.
 
@@ -27,7 +27,7 @@ For example, "when BTC passes $100,000, send me an alert."
 
 CoinAlert Beta stores no sensitive user data since there is no sign-in and no way to link any device with a specific individual. 
 
-# CoinAlert Support
+### CoinAlert Support
 
 Reach out to the developer as listed in App Store Connect for any questions or concerns during the vetting process.
 
