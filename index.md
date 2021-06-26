@@ -1,12 +1,12 @@
 # Destination for Cryptocurrency Price Notifications and Alerts
 
-CoinAlert Beta is the first iteration of an app that will deliver price notifications and alerts for different cryptocurrencies. The current version has been submitted for approval to be distributed to external testers via Test Flight.
+CoinAlerts Pro delivers price notifications for your favorite cryptocurrencies in the form of iOS push notifications. Gone are the days of checking your phone all the time to see what crypto is doing! With CoinAlerts Pro, just select your favorite coins and your desired notification frequency...then crypto prices will come to you!
 
 ## Current Functionality
 
 Current functionality includes:
 
-1. Price notifications on up to 16 different cryptocurrencies
+1. Price notifications on up to 16 different cryptocurrencies (choose from the top 1776 cryptocurrencies)
 2. Variable notification frequency
   - 15 minutes
   - 30 minutes
@@ -16,12 +16,7 @@ Current functionality includes:
   - 8 hours
   - 1 day
   - No notifications
-3. View current price data on the top 1000 cryptocurrencies
-
-## Future Improvements
-
-Prior to delivering the final iteration to the App Store for mass use, the app will add the ability to create custom price notifications. 
-For example, "when BTC passes $100,000, send me an alert." 
+3. View current price data on the top 1776 cryptocurrencies
 
 ## Privacy
 
@@ -29,7 +24,7 @@ CoinAlert Beta stores no sensitive user data since there is no sign-in and no wa
 
 ### CoinAlert Support
 
-Reach out to the developer as listed in App Store Connect for any questions or concerns during the vetting process.
+Reach out to the developer as listed in App Store Connect for any questions or concerns during the vetting process. Contact email is coinalertspro@gmail.com
 
 ### GitHub Support
 
