@@ -20,9 +20,9 @@ Current functionality includes:
 
 ## Privacy
 
-CoinAlert Beta stores no sensitive user data since there is no sign-in and no way to link any device with a specific individual. 
+CoinAlerts Pro collects no data that can be associated with a specific individual. The only data collected from a user is the Firebase Cloud Messaging token associated with their device and the coins they wish to receive price notifications of.
 
-## CoinAlert Support
+## CoinAlerts Pro Support
 
 Reach out to the developer as listed in App Store Connect for any questions or concerns during the vetting process. Contact email is coinalertspro@gmail.com
 
